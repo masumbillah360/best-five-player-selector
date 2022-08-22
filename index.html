@@ -113,6 +113,7 @@
                 <div class="col-12  bg-dark text-white py-2 rounded">
                     <h3 class="text-center fw-bold">Selected -V</h3>
                     <ol id="player-name-container">
+                        
                     </ol>
                 </div>
                 <div class="col-12 bg-dark text-white text-center py-2 rounded">
@@ -122,11 +123,11 @@
                             <label class="" for="player">Per Player: </label>
                         </div>
                         <div class="col-7">
-                            <input class="form-control" type="text" name="player">
+                            <input class="form-control" id="per-player" type="text" name="player">
                         </div>
                     </div>
-                    <button class="btn btn-primary w-75 fw-bold">Calculate</button>
-                    <h4 class="mt-2 mb-4">Player Expense : $00</h4>
+                    <button class="btn btn-primary w-75 fw-bold" id="calculate-btn">Calculate</button>
+                    <h4 class="mt-2 mb-4 fw-bold">Player Expense : $<span id="player-expense">00</span></h4>
                     <div class="row justify-content-center align-items-center mt-3">
                         <div class="col-5 text-end">
                             <label class="" for="player">Manager : </label>
