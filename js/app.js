@@ -11,9 +11,10 @@ for(const btn of pBtn){
                 createList.innerText = player.innerText;
                 nameContainer.appendChild(createList);
                 event.target.setAttribute('disabled',true);
+                event.target.classList.add('btn-secondary');
             }
             else{
-                alert("You cant Added more.\n Thank You")
+                alert("You Can't Added more than Five Players.\n Thank You")
             }
 
         }
@@ -23,7 +24,7 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     const playerName = document.getElementById('player-name-container');
     const playersNumbers = playerName.childElementCount;
     if (playersNumbers<=0) {
-        alert("No Player on your top Players Lists");
+        alert("No Player Selected on your Top Players List");
     }
     else{
         const perPlayerCost = getInputValue('per-player');
@@ -32,7 +33,8 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
         }
         else{
             const totalCost = playersNumbers * perPlayerCost;
-            setTextValue('player-expense',totalCost);
+            const fixedAmount = fixedAmout(totalCost);
+            setTextValue('player-expense',fixedAmount);
         }
         
     }
@@ -47,6 +49,7 @@ document.getElementById('calculate-total').addEventListener('click',function(){
     else{
         const playerExpense = getInnerText('player-expense');
         const totalCost = managerCost + coachCost + playerExpense;
-        setTextValue('total-cost', totalCost);
+        const fixedTotalcost = fixedAmout(totalCost);
+        setTextValue('total-cost', fixedTotalcost);
     }
 })
