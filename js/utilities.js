@@ -1,7 +1,13 @@
 function getInputValue(id) {
     const stringValue = document.getElementById(id).value;
-    const value = parseFloat(stringValue);
-    return value;
+    if (isNaN(stringValue) && typeof(stringValue) != 'number') {
+        alert("Please Enter a Valied Amount");
+        return;
+    }
+    else{
+        const value = parseFloat(stringValue);
+        return value;
+    }
 }
 
 function getInnerText(id) {

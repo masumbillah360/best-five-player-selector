@@ -27,13 +27,14 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     }
     else{
         const perPlayerCost = getInputValue('per-player');
-        if (isNaN(perPlayerCost) || typeof(perPlayerCost) !='number') {
-            alert("Please Enter Valied Amount");
+        if (isNaN(perPlayerCost)){
+            return;
         }
         else{
             const totalCost = playersNumbers * perPlayerCost;
             setTextValue('player-expense',totalCost);
         }
+        
     }
 });
 
@@ -41,7 +42,7 @@ document.getElementById('calculate-total').addEventListener('click',function(){
     const managerCost = getInputValue('manager-cost');
     const coachCost = getInputValue('coach-cost');
     if (isNaN(managerCost) || isNaN(coachCost)) {
-        alert("Please Enter valied Amount");
+        return;
     }
     else{
         const playerExpense = getInnerText('player-expense');
