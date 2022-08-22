@@ -4,6 +4,12 @@ function getInputValue(id) {
     return value;
 }
 
+function getInnerText(id) {
+    const stringText = document.getElementById(id).innerText;
+    const number = parseFloat(stringText);
+    return number;
+}
+
 function setTextValue(id,value) {
     const findElement = document.getElementById(id).innerText = value;
     return findElement;
@@ -33,7 +39,20 @@ for(const btn of pBtn){
 document.getElementById('calculate-btn').addEventListener('click',()=>{
     const playerName = document.getElementById('player-name-container');
     const playersNumbers = playerName.childElementCount;
-    const perPlayerCost = getInputValue('per-player');
-    const totalCost = playersNumbers * perPlayerCost;
-    setTextValue('player-expense',totalCost);
+    if (playersNumbers<=0) {
+        alert("No Player on your top Players Lists");
+    }
+    else{
+        const perPlayerCost = getInputValue('per-player');
+        const totalCost = playersNumbers * perPlayerCost;
+        setTextValue('player-expense',totalCost);
+    }
+});
+
+document.getElementById('calculate-total').addEventListener('click',()=>{
+    const managerCost = getInputValue('manager-cost');
+    const coachCost = getInputValue('coach-cost');
+    const playerExpense = getInnerText('player-expense');
+    const totalCost = managerCost + coachCost + playerExpense;
+    setTextValue('total-cost', totalCost);
 })

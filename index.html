@@ -28,9 +28,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="img-fluid h-75 rounded-top" src="./images/cristiano ronaldo.jpg" class="card-img-top" alt="...">
+                        <img class="img-fluid rounded-top" src="./images/christianoronaldo.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-center">
-                          <h5 class="card-title fw-bold p-name">Christiano Ronalod</h5>
+                          <h5 class="card-title fw-bold p-name">Ronalod</h5>
                           <p class="card-text">30 Goals . 120 Assist</p>
                           <button class="btn btn-primary fw-bold w-75 p-btn">Select</button>
                         </div>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="img-fluid h-75 rounded-top" src="./images/mesutozil.jpeg" class="card-img-top" alt="...">
+                        <img class="img-fluid h-75 rounded-top" src="./images/mesutozil.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-center">
                           <h5 class="card-title fw-bold p-name">Mesut Ozil</h5>
                           <p class="card-text">30 Goals . 120 Assist</p>
@@ -90,7 +90,7 @@
                     <div class="card">
                         <img class="img-fluid h-75 rounded-top" src="./images/mbappe.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-center">
-                          <h5 class="card-title fw-bold p-name">Killiyan Embappe</h5>
+                          <h5 class="card-title fw-bold p-name">Embappe</h5>
                           <p class="card-text">30 Goals . 120 Assist</p>
                           <button class="btn btn-primary fw-bold w-75 p-btn">Select</button>
                         </div>
@@ -133,7 +133,7 @@
                             <label class="" for="player">Manager : </label>
                         </div>
                         <div class="col-7">
-                            <input class="form-control" type="text" name="player">
+                            <input id="manager-cost" class="form-control" type="text" name="player">
                         </div>
                     </div>
                     <div class="row justify-content-center align-items-center my-3">
@@ -141,12 +141,12 @@
                             <label class="" for="player">Coach : </label>
                         </div>
                         <div class="col-7">
-                            <input class="form-control" type="text" name="player">
+                            <input id="coach-cost" class="form-control" type="text" name="player">
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary w-75 fw-bold">Calculate Total</button>
-                    <h4 class=" mt-4 mb-5">Total Expense : $00</h4>
+                    <button id="calculate-total" class="btn btn-primary w-75 fw-bold">Calculate Total</button>
+                    <h4 class=" mt-4 mb-5">Total Expense : $<span id="total-cost">00</span></h4>
                 </div>
             </div>
         </aside>
