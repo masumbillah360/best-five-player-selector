@@ -1,34 +1,7 @@
-function getInputValue(id) {
-    const stringValue = document.getElementById(id).value;
-    const value = parseFloat(stringValue);
-    return value;
-}
-
-function getInnerText(id) {
-    const stringText = document.getElementById(id).innerText;
-    const number = parseFloat(stringText);
-    return number;
-}
-
-function setTextValue(id,value) {
-    const findElement = document.getElementById(id).innerText = value;
-    return findElement;
-}
-
-function validation(number) {
-    if (isNaN(number)) {
-        console.log("Enter a Valied Amount")
-    }
-    else{
-        console.log("Your Number is correct");
-    }
-}
-validation("asd");
-
 const nameContainer = document.getElementById('player-name-container');
 const pBtn = document.getElementsByClassName('p-btn');
 for(const btn of pBtn){
-    btn.addEventListener('click',(event)=>{
+    btn.addEventListener('click',function(event){
         const pName = event.target.parentNode.querySelectorAll('.p-name');
         for(const player of pName){
             const nameCount = nameContainer.childElementCount;
@@ -46,7 +19,7 @@ for(const btn of pBtn){
         }
     })
 }
-document.getElementById('calculate-btn').addEventListener('click',()=>{
+document.getElementById('calculate-btn').addEventListener('click',function(){
     const playerName = document.getElementById('player-name-container');
     const playersNumbers = playerName.childElementCount;
     if (playersNumbers<=0) {
@@ -64,7 +37,7 @@ document.getElementById('calculate-btn').addEventListener('click',()=>{
     }
 });
 
-document.getElementById('calculate-total').addEventListener('click',()=>{
+document.getElementById('calculate-total').addEventListener('click',function(){
     const managerCost = getInputValue('manager-cost');
     const coachCost = getInputValue('coach-cost');
     if (isNaN(managerCost) || isNaN(coachCost)) {
