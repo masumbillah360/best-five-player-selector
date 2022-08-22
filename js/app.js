@@ -15,6 +15,16 @@ function setTextValue(id,value) {
     return findElement;
 }
 
+function validation(number) {
+    if (isNaN(number)) {
+        console.log("Enter a Valied Amount")
+    }
+    else{
+        console.log("Your Number is correct");
+    }
+}
+validation("asd");
+
 const nameContainer = document.getElementById('player-name-container');
 const pBtn = document.getElementsByClassName('p-btn');
 for(const btn of pBtn){
@@ -44,15 +54,25 @@ document.getElementById('calculate-btn').addEventListener('click',()=>{
     }
     else{
         const perPlayerCost = getInputValue('per-player');
-        const totalCost = playersNumbers * perPlayerCost;
-        setTextValue('player-expense',totalCost);
+        if (isNaN(perPlayerCost) || typeof(perPlayerCost) !='number') {
+            alert("Please Enter Valied Amount");
+        }
+        else{
+            const totalCost = playersNumbers * perPlayerCost;
+            setTextValue('player-expense',totalCost);
+        }
     }
 });
 
 document.getElementById('calculate-total').addEventListener('click',()=>{
     const managerCost = getInputValue('manager-cost');
     const coachCost = getInputValue('coach-cost');
-    const playerExpense = getInnerText('player-expense');
-    const totalCost = managerCost + coachCost + playerExpense;
-    setTextValue('total-cost', totalCost);
+    if (isNaN(managerCost) || isNaN(coachCost)) {
+        alert("Please Enter valied Amount");
+    }
+    else{
+        const playerExpense = getInnerText('player-expense');
+        const totalCost = managerCost + coachCost + playerExpense;
+        setTextValue('total-cost', totalCost);
+    }
 })
