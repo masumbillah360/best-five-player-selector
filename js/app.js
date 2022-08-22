@@ -25,31 +25,38 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     const playersNumbers = playerName.childElementCount;
     if (playersNumbers<=0) {
         alert("No Player Selected on your Top Players List");
+        return;
     }
     else{
         const perPlayerCost = getInputValue('per-player');
-        if (isNaN(perPlayerCost)){
-            return;
+        const valiedPlayerCost = validationValue(perPlayerCost);
+        if (isNaN(valiedPlayerCost)) {
+            return
         }
         else{
-            const totalCost = playersNumbers * perPlayerCost;
-            const fixedAmount = fixedAmout(totalCost);
-            setTextValue('player-expense',fixedAmount);
-        }
-        
+            const totalCost = valiedPlayerCost * playersNumbers;
+            const fixedTotalCost = fixedAmout(totalCost);
+            setTextValue('player-expense', fixedTotalCost);
+        }        
     }
+    document.getElementById('per-player').value = '';
 });
 
 document.getElementById('calculate-total').addEventListener('click',function(){
     const managerCost = getInputValue('manager-cost');
     const coachCost = getInputValue('coach-cost');
-    if (isNaN(managerCost) || isNaN(coachCost)) {
+    // const valiedManagerCost = ;
+    // const valiedCoachCost = ;
+    if (isNaN(validationValue(coachCost)) || isNaN(validationValue(managerCost))) {
         return;
     }
     else{
         const playerExpense = getInnerText('player-expense');
-        const totalCost = managerCost + coachCost + playerExpense;
+        const totalCost = validationValue(managerCost) + validationValue(coachCost) + playerExpense;
         const fixedTotalcost = fixedAmout(totalCost);
         setTextValue('total-cost', fixedTotalcost);
     }
+    document.getElementById('manager-cost').value = '';
+    document.getElementById('coach-cost').value = '';
+    
 })

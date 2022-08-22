@@ -1,13 +1,6 @@
 function getInputValue(id) {
-    const stringValue = document.getElementById(id).value;
-    if (isNaN(stringValue) && typeof(stringValue) != 'number') {
-        alert("Please Enter a Valied Amount\nAmount should be Number Value");
-        return;
-    }
-    else{
-        const value = parseFloat(stringValue);
-        return value;
-    }
+    const value = document.getElementById(id).value;
+    return value;
 }
 
 function getInnerText(id) {
@@ -25,4 +18,16 @@ function fixedAmout(amount) {
     const totalAmount = amount.toFixed(2);
     const finalAmount = parseFloat(totalAmount);
     return finalAmount;
+}
+
+//create a function for validation input value 
+function validationValue(value) {
+    if (isNaN(value) || value.length<=0) {
+        alert("Please Enter Valied Amount");
+        return;
+    }
+    else{
+        const output = parseFloat(value);
+        return output;
+    }
 }
