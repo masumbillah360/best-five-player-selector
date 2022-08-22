@@ -1,15 +1,18 @@
-const nameContainer = document.getElementById('player-name-container');
-const pBtn = document.getElementsByClassName('p-btn');
-for(const btn of pBtn){
+// parent element ul for contain players list
+const playerNameContainer = document.getElementById('player-name-container');
+
+// select player from page to select on Players list
+const playerBtn = document.getElementsByClassName('p-btn');
+for(const btn of playerBtn){
     btn.addEventListener('click',function(event){
-        const pName = event.target.parentNode.querySelectorAll('.p-name');
-        for(const player of pName){
-            const nameCount = nameContainer.childElementCount;
+        const playerName = event.target.parentNode.querySelectorAll('.p-name');
+        for(const name of playerName){
+            const nameCount = playerNameContainer.childElementCount;
             if (nameCount<5) {
                 const createList = document.createElement('li');
                 createList.classList.add('fw-bold')
-                createList.innerText = player.innerText;
-                nameContainer.appendChild(createList);
+                createList.innerText = name.innerText;
+                playerNameContainer.appendChild(createList);
                 event.target.setAttribute('disabled',true);
                 event.target.classList.add('btn-secondary');
             }
@@ -20,9 +23,10 @@ for(const btn of pBtn){
         }
     })
 }
+// all player cost calculate btn handler and function
 document.getElementById('calculate-btn').addEventListener('click',function(){
-    const playerName = document.getElementById('player-name-container');
-    const playersNumbers = playerName.childElementCount;
+    const playerNames = document.getElementById('player-name-container');
+    const playersNumbers = playerNames.childElementCount;
     if (playersNumbers<=0) {
         alert("No Player Selected on your Top Players List");
         return;
@@ -41,12 +45,10 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     }
     document.getElementById('per-player').value = '';
 });
-
+// total cost calculate btn handler and function
 document.getElementById('calculate-total').addEventListener('click',function(){
     const managerCost = getInputValue('manager-cost');
     const coachCost = getInputValue('coach-cost');
-    // const valiedManagerCost = ;
-    // const valiedCoachCost = ;
     if (isNaN(validationValue(coachCost)) || isNaN(validationValue(managerCost))) {
         return;
     }
@@ -58,5 +60,4 @@ document.getElementById('calculate-total').addEventListener('click',function(){
     }
     document.getElementById('manager-cost').value = '';
     document.getElementById('coach-cost').value = '';
-    
-})
+});
