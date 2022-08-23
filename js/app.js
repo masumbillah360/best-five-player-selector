@@ -2,11 +2,11 @@
 const playerNameContainer = document.getElementById('player-name-container');
 
 // select player from page to select on Players list
-const playerBtn = document.getElementsByClassName('p-btn');
+const playerBtn = document.querySelectorAll('.select-btn');
 for(const btn of playerBtn){
     btn.addEventListener('click',function(event){
-        const playerName = event.target.parentNode.querySelectorAll('.p-name');
-        for(const name of playerName){
+        const playerNames = event.target.parentNode.querySelectorAll('.player-name');
+        for(const name of playerNames){
             const nameCount = playerNameContainer.childElementCount;
             if (nameCount<5) {
                 const createList = document.createElement('li');
@@ -35,6 +35,7 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
         const perPlayerCost = getInputValue('per-player');
         const valiedPlayerCost = validationValue(perPlayerCost);
         if (isNaN(valiedPlayerCost)) {
+            setTextValue('player-expense','00' );
             return
         }
         else{
@@ -50,6 +51,7 @@ document.getElementById('calculate-total').addEventListener('click',function(){
     const managerCost = getInputValue('manager-cost');
     const coachCost = getInputValue('coach-cost');
     if (isNaN(validationValue(coachCost)) || isNaN(validationValue(managerCost))) {
+        setTextValue('total-cost', '00');
         return;
     }
     else{

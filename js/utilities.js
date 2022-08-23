@@ -1,3 +1,4 @@
+// All are common function to use app.js file 
 // function for get input value using id
 function getInputValue(id) {
     const value = document.getElementById(id).value;
@@ -23,9 +24,9 @@ function fixedAmout(amount) {
     return finalAmount;
 }
 
-//create a function for validation input value 
+//create a function for validation value 
 function validationValue(value) {
-    if (isNaN(value) || value.length<=0) {
+    if (isNaN(value) || value.length<=0 || value<0 ){
         alert("Please Enter Valied Amount");
         return;
     }
