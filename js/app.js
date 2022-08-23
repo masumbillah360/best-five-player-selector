@@ -1,4 +1,4 @@
-// All are common function to use app.js file 
+// common function 
 // function for get input value using id
 function getInputValue(id) {
     const value = document.getElementById(id).value;
