@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>best team maker</title>
+    <!-- bootstrap cdn links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
+    <!-- header section start's here  -->
     <header class="mb-4 p-4 bg-secondary text-white text-center">
       <div class="w-25 mx-auto">
         <img class="img-fluid rounded-circle w-25 h-25" src="./images/fauzan-saari-AmhdN68wjPc-unsplash.jpg" alt="">
@@ -15,11 +17,14 @@
         <p class=" px-md-5">This website helps you to make your best team on your budget. You can easiliy make your team and see your total coast to make a best Team.</p>
         <p class=" px-md-5">Make Your Own Team. Stay Happy, Stay Safe!</p>
     </header>
-
+    <!-- header section end's here -->
+    <!-- main section start's here  -->
     <main class="container  mt-5">
         <section class="row">
+          <!-- article section start's here  -->
         <article class="col-md-9">
             <div class="row g-3">
+              <!-- player card -1  -->
                 <div class="col-md-4">
                     <div class="card">
                         <img class="img-fluid h-75 rounded-top" src="./images/messi.jpg" class="card-img-top" alt="...">
@@ -30,6 +35,7 @@
                         </div>
                       </div>
                 </div>
+                <!-- player card -2  -->
                 <div class="col-md-4">
                     <div class="card">
                         <img class="img-fluid rounded-top" src="./images/christianoronaldo.jpg" class="card-img-top" alt="...">
@@ -40,6 +46,7 @@
                         </div>
                       </div>
                 </div>
+                <!-- player card -3  -->
                 <div class="col-md-4">
                     <div class="card">
                         <img class="img-fluid h-75 rounded-top" src="./images/msalah.jpg" class="card-img-top" alt="...">
@@ -50,6 +57,7 @@
                         </div>
                       </div>
                 </div>
+                <!-- player card -4  -->
                 <div class="col-md-4">
                     <div class="card">
                         <img class="img-fluid h-75 rounded-top" src="./images/mesutozil.jpg" class="card-img-top" alt="...">
@@ -60,6 +68,7 @@
                         </div>
                       </div>
                 </div>
+                <!-- player card -5  -->
                 <div class="col-md-4">
                     <div class="card">
                         <img class="img-fluid h-75 rounded-top" src="./images/neymar.jpg" class="card-img-top" alt="...">
@@ -70,6 +79,7 @@
                         </div>
                       </div>
                 </div>
+                <!-- player card -6  -->
                 <div class="col-md-4">
                     <div class="card">
                         <img class="img-fluid h-75 rounded-top" src="./images/dibala.jpg" class="card-img-top" alt="...">
@@ -80,6 +90,7 @@
                         </div>
                       </div>
                 </div>
+                <!-- player card -7  -->
                 <div class="col-md-4">
                     <div class="card">
                         <img class="img-fluid h-75 rounded-top" src="./images/angeldmaria.jpg" class="card-img-top" alt="...">
@@ -90,6 +101,7 @@
                         </div>
                       </div>
                 </div>
+                <!-- player card -8  -->
                 <div class="col-md-4">
                     <div class="card">
                         <img class="img-fluid h-75 rounded-top" src="./images/mbappe.jpg" class="card-img-top" alt="...">
@@ -100,6 +112,7 @@
                         </div>
                       </div>
                 </div>
+                <!-- player card -9  -->
                 <div class="col-md-4">
                     <div class="card">
                         <img class="img-fluid h-75 rounded-top" src="./images/sadiomane.jpg" class="card-img-top" alt="...">
@@ -112,16 +125,22 @@
                 </div>
             </div>
         </article>
+        <!-- article section end's here  -->
+        <!-- cost calcualtor section/aside section start's here  -->
         <aside class="col-md-3">
             <div class="row gy-4">
+              <!-- selected player section start's here -->
                 <div class="col-12  bg-dark text-white py-2 rounded">
                     <h3 class="text-center fw-bold">Selected -V</h3>
-                    <ol id="player-name-container">
-                        
+                    <!-- player names will conatain this order lists -->
+                    <ol id="player-name-container">                        
                     </ol>
                 </div>
+                <!-- selected player section end's here  -->
+                <!-- player cost calculate section start's here  -->
                 <div class="col-12 bg-dark text-white text-center py-2 rounded">
                     <h4 class="text-center fw-bold">Budget</h4>
+                    <!-- total player cost section -->
                     <div class="row justify-content-center align-items-center my-2">
                         <div class="col-5 text-end">
                             <label class="" for="player">Per Player: </label>
@@ -130,8 +149,10 @@
                             <input class="form-control" id="per-player" type="text" name="player">
                         </div>
                     </div>
+                    <!-- all player calcualte btn and players cost will see here  -->
                     <button class="btn btn-primary w-75 fw-bold" id="calculate-btn">Calculate</button>
                     <h5 class="mt-2 mb-4 fw-bold">Player Expense : $<span id="player-expense">00</span></h5>
+
                     <div class="row justify-content-center align-items-center mt-3">
                         <div class="col-5 text-end">
                             <label class="" for="player">Manager : </label>
@@ -148,18 +169,24 @@
                             <input id="coach-cost" class="form-control" type="text" name="player">
                         </div>
                     </div>
-                    
+                    <!-- total cost calcualte btn and total cost will see here -->
                     <button id="calculate-total" class="btn btn-primary w-75 fw-bold">Calculate Total</button>
                     <h5 class=" mt-4 mb-5 fw-bold">Total Expense : $<span id="total-cost">00</span></h5>
                 </div>
             </div>
         </aside>
+        <!-- cost calcualtor section/aside section start's here  -->
     </section>
     </main>
+    <!-- main section end's here  -->
+    <!-- footer section start's here  -->
     <footer class="mt-5">
         <p class="text-center border py-5">All &copy;copyright reserves : Masum Billah</p>
     </footer>
+    <!-- footer section end's here  -->
+    <!-- bootstrap script link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- utilities and app.js  -->
     <script src="./js/utilities.js"></script>
     <script src="./js/app.js"></script>
   </body>
